@@ -1,0 +1,69 @@
+﻿@model IEnumerable<capaDatos.Usuarios>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.semestre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carrera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ncontrol)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.semestre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.carrera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ncontrol)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_usuario }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_usuario }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_usuario })
+        </td>
+    </tr>
+}
+
+</table>

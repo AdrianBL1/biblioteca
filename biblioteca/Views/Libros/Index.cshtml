@@ -1,0 +1,69 @@
+﻿@model IEnumerable<capaDatos.Libros>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.autor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isbn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.editorial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numpaginas)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.autor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isbn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.categoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.editorial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numpaginas)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_libro }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_libro }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_libro })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model capaDatos.Prestamos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Prestamos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_prestamo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_prestamo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_entrega)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_entrega)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comentarios)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comentarios)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Libros.titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Libros.titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuarios.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuarios.nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_prestamo }) |
+    @Html.ActionLink("Volver a la Lista", "Index")
+</p>
